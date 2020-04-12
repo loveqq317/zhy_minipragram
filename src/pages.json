@@ -1,16 +1,65 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},{
+			"path": "pages/company/index",
+			"style": {
+				"navigationBarTitleText": "公司简介"
+			}
+		},{
+			"path": "pages/profile/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},{
+			"path": "pages/project/index",
+			"style": {
+				"navigationBarTitleText": "项目大厅"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "钢构天下",
+		"navigationBarBackgroundColor": "#F7734F"
+
+	},
+	"tabBar": {
+		"color": "#8a8a8a",
+		"selectedColor": "#F7734F",
+		"backgroundColor": "#fff",
+		"position": "bottom",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "./static/icon/home.png",
+				"selectedIconPath": "./static/icon/home_active.png"
+			},
+			{
+				"pagePath": "pages/company/index",
+				"text": "公司简介",
+				"iconPath": "./static/icon/company.png",
+				"selectedIconPath": "./static/icon/company_active.png"
+			},
+			{
+				"pagePath": "pages/project/index",
+				"text": "项目大厅",
+				"iconPath": "./static/icon/project.png",
+				"selectedIconPath": "./static/icon/project_active.png"
+			},
+
+			{
+				"pagePath": "pages/profile/index",
+				"text": "我的",
+				"iconPath": "./static/icon/profile.png",
+				"selectedIconPath": "./static/icon/profile_active.png"
+			}
+		]
 	}
 }

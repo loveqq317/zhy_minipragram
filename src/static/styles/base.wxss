@@ -19,3 +19,7 @@ image{
   width: 100%;
   display: block;
 }
+.segmented-control__text.data-v-071a40dc {
+  font-size: 14px!important;
+
+}

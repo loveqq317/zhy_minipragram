@@ -15,6 +15,12 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+    @import "./static/styles/base.wxss";
+    @import "./static/styles/iconfont.wxss";
 	/*每个页面公共css */
+    /* #ifdef APP-PLUS ||MP-WEIXIN */
+
+    /* #endif */
+
 </style>

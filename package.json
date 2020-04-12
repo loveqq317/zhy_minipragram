@@ -46,6 +46,7 @@
     "@dcloudio/uni-cli-shared": "^2.0.0-26920200409002",
     "@dcloudio/uni-migration": "^2.0.0-26920200409002",
     "@dcloudio/uni-template-compiler": "^2.0.0-26920200409002",
+    "@dcloudio/uni-ui": "^1.1.9",
     "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-26920200409002",
     "@dcloudio/vue-cli-plugin-uni": "^2.0.0-26920200409002",
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-26920200409002",
@@ -57,10 +58,15 @@
     "@vue/cli-service": "^3.12.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "fibers": "^4.0.2",
     "mini-types": "*",
     "miniprogram-api-typings": "^2.8.0-2",
+    "node-sass": "^4.13.1",
     "postcss-comment": "^2.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "sass": "^1.26.3",
+    "sass-loader": "^7.3.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.42.1"
   },
   "browserslist": [
     "Android >= 4",

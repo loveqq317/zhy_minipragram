@@ -9,6 +9,7 @@
                 <img src="../../static/images/publish.png" alt="" class="action_img" mode="widthFix">
                 <text class="action_title">发表项目</text>
             </view>
+
             <view class="action_item">
                 <img src="../../static/images/accept.png" alt="" class="action_img" mode="widthFix">
                 <text class="action_title">承接项目</text>
@@ -23,12 +24,14 @@
                     :autoplay="autoplay" :interval="interval" :duration="duration"
                     :indicator-active-color="activeDotColor">
                 <swiper-item class="swiper_item" v-for="item in projects" :key="item.id">
-                    <img :src="item.thumb" alt="" class="project_img" mode="aspectFit" >
+                    <img :src="item.thumb" alt="" class="project_img" mode="widthFix" >
                 </swiper-item>
 
             </swiper>
         </view>
-
+        <view class="project_list">
+            <my-card :list="projectList"></my-card>
+        </view>
 
     </view>
 
@@ -36,6 +39,7 @@
 
 <script>
   // import {swiper} from '@dcloudio/uni-ui'
+  import myCard from "@/components/my-card";
   export default {
     name: "home",
     data(){
@@ -45,11 +49,28 @@
         interval: 2000,
         duration: 500,
         activeDotColor:'#F7734F',
-        projects:[]
+        projects:[
+          {id:0,title:'雄安某景区投标项目',thumb:'/static/images/park.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:1,title:'雄安某景区投标项目',thumb:'/static/images/park1.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:2,title:'雄安某景区投标项目',thumb:'/static/images/park2.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:3,title:'雄安某景区投标项目',thumb:'/static/images/park3.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:4,title:'雄安某景区投标项目',thumb:'/static/images/park4.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:5,title:'雄安某景区投标项目',thumb:'/static/images/park5.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:6,title:'雄安某景区投标项目',thumb:'/static/images/park.jpeg',info:'30亩/庭院景观/公园景观设计'}
+        ],
+        projectList:[
+          {id:0,title:'雄安某景区投标项目',thumb:'/static/images/park.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:1,title:'雄安某景区投标项目',thumb:'/static/images/park1.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:2,title:'雄安某景区投标项目',thumb:'/static/images/park2.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:3,title:'雄安某景区投标项目',thumb:'/static/images/park3.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:4,title:'雄安某景区投标项目',thumb:'/static/images/park4.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:5,title:'雄安某景区投标项目',thumb:'/static/images/park5.jpeg',info:'30亩/庭院景观/公园景观设计'},
+          {id:6,title:'雄安某景区投标项目',thumb:'/static/images/park.jpeg',info:'30亩/庭院景观/公园景观设计'}
+        ]
       }
     },
     components:{
-      // swiper
+      myCard
     },
     onLoad(){
       // wx.request({
@@ -58,17 +79,17 @@
       //     console.log(res);
       //   }
       // })
-      this.request({
-        url:"http://157.122.54.189:9088/image/v3/homepage/vertical",
-        data:{
-          state:this.state,
-          limit:30,
-          order:"hot",
-          skip:0
-        }
-      }).then(result=>{
-        this.projects=result.res.homepage[1].items
-      })
+      // this.request({
+      //   url:"http://157.122.54.189:9088/image/v3/homepage/vertical",
+      //   data:{
+      //     state:this.state,
+      //     limit:30,
+      //     order:"hot",
+      //     skip:0
+      //   }
+      // }).then(result=>{
+      //   this.projects=result.res.homepage[1].items
+      // })
     }
   }
 </script>
@@ -76,11 +97,10 @@
 <style scoped lang="scss">
 .swiper{
     height: 400rpx;
-    margin:30rpx;
+    margin:20rpx;
     .swiper_item{
         background-color:#F2F2F2;
         .project_img{
-            border-radius: 30rpx;
             height: 400rpx;
         }
     }
@@ -92,8 +112,8 @@
     flex-direction: row;
     text-align: center;
     .action_img{
-        width:80rpx;
-        height: 80rpx;
+        width:70rpx;
+        height: 70rpx;
         margin:4rpx auto;
     }
     .action_item{
